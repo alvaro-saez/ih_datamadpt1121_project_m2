@@ -1,83 +1,57 @@
 <p align="left"><img src="https://cdn-images-1.medium.com/max/184/1*2GDcaeYIx_bQAZLxWM4PsQ@2x.png"></p>
 
-# __ih_datamadpt1121_project_m2__
+# __ih_datamadpt1121_project_m2__ ALVARO
 
-![Image](https://github.com/ih-datapt-mad/ih_datamadpt1121_project_m2/blob/main/images/visuals.jpg)
-
-Data analytics is oftentimes referred to as business intelligence, BI development, or product analytics. However, that is just the tip of the iceberg since the data analytics process includes activities such as data formation/creation, data cleansing, exploratory data analysis (especially this part), feature engineering, and interpretation of suggestions/predictions/results derived from advanced modelling analysis (i.e.: Machine Learning).
-
-For this project you will perform some of these activities in order to analyse the [__diamonds_m2.db__](https://github.com/ih-datapt-mad/ih_datamadpt1121_project_m2/blob/main/db/diamonds_m2.db) `SQLite` database.
-
-
+## Librerías:
 ```
-conda install -c anaconda sqlite
+import pandas as pd 
+```
+```
+import numpy as np 
+```
+```
+from sqlalchemy import create_engine
+```
+```
+import seaborn as sns
 ```
 
 
----
+## Datasets: Obtenemos dos datasets finales:
+
+1. Usando sqlite como bbdd local establecemos una conexión con ella gracias a SQLAlchemy. 
+2. Realizamos una única query para obtener el dataframe final
+3. Añadimos dos columnas para obtener medidas europeas “mg y gr” (que al final no se han utilizado en el dashboard) y obtener el oriimer data frame final con el que empezar a crear os dashboards
+4. Creamos el coeficiente de correlación para obtener el segundo data frame con el que estudiar las relaciones entre los atributos numéricos.
+5. Exportamos los dos dataframes en csv a una carpeta llamada “output_dataset”
 
 
+## Visualización: 
 
-## **Deliverables:**
+[LINK a Tableau Public](https://public.tableau.com/app/profile/alvaro4889/viz/p2_diamonds_alvaro/PRICESEARCHERTOOL)
 
-A GitHub repository including:
+El proyecto consiste en 3 pestañas (dos “dashboards” y una “story”)
 
-- `exploratory analysis` files that holds the results of __Challenge 1__. 
+### 1 - PRICE SEARCHER TOOL: DASHBOARD
 
-- `BI Report/Dashboard` meeting the requeriments specified in __Challenge 2__.
+Objetivo: tienes un diamante y no sabes que precio ponerle. Usando los filtros seleccionas las características de tus diamantes y te devuelve el precio de mercado de un diamante similar. 
+Si hay múltiples diamantes te puedes fijar en las medias.
+Si quieres un rango te puedes fijar en las medias también.
+![Image](https://raw.githubusercontent.com/alvaro-saez/ih_datamadpt1121_project_m2/main/images/price_searcher_tool.png)
 
-- `README.md` file explaining the job done and your main conclusions. You may find more info of how to build a README file [here](https://github.com/potacho/data-project-template/blob/master/README.md).
+### 2 - CUT, COLOR, CLARITY: STORY (dos pestañas)
+PESTAÑA 1 - HEATMAP: Objetivo: ver de un solo vistazo la distribución de los diamantes en torno a las 3 principales categorías cualitativas (cut, color, clarity) y en base a los principales KPIs (ventas - ingresos, precio medio y kilates medios)
 
+![Image](https://github.com/alvaro-saez/ih_datamadpt1121_project_m2/blob/main/images/heatmap.png)
 
+PESTAÑA 2 - TABLA: Objetivo: poder descargarse los datos analizados y visualizados en el heatmap
 
----
-
-
-
-## **Presentation:**
-
-- __Time:__ 4 minutes sharp.
-- __Content:__ explain why your dashboard funtionalities are the best for getting meaningful data insights. Support your arguments on the conclusions obtained from the __exploratory analysis__. Conclude your pitch telling us (_in one sentence_) the most important insight (_under your criteria_) you've extracted.
-
-<p align="center"><img src="https://media.giphy.com/media/1Ygis29YXMS35cW90I/giphy.gif"></p>
+![Image](https://github.com/alvaro-saez/ih_datamadpt1121_project_m2/blob/main/images/table.png)
 
 
-> __IMPORTANT NOTE:__ You only need your BI Report/Dashboard for the presentation (i.e.: no Jupyter, no PowerPoint/Canva)
-
-
-
----
-
-
-
-## __Challenge 1: Data Exploration and Preparation__
-
-The goal of this challenge is to perform an __exploratory analysis__ in order to gain initial insight on our diamonds database and prepare the __data model__ that better fits your visualizations. You may use any ETL tool from those explained in class (i.e.: Pandas, PowerQuery, Tableau Public). 
-
-<p align="center"><img src="https://media.giphy.com/media/iP1qEUE7VKhLq/giphy.gif"></p>
-
-> **IMPORTANT NOTE:** You may use any tool and/or workflow that you find more convenient in order to provide the requested output. 
-
-
-
----
-
-
-
-## **Challenge 2: BI Report/Dashboard**
-
-BI Reports and Dashboards are powerful tools for communicating important information __at-a-glance__. The goal of this challenge is to build a BI Report/Dashboard using our diamonds database that will help the final user (i.e.: yourself) to perform better during _Module 3 project (Kaggle Competition)_. 
-
-> __Tip:__ you should first consider which data and which indicators should be put on the BI Report/Dashboard. Then, decompose the key indicators from multiple dimensions. 
-
-<p align="center"><img src="https://media.giphy.com/media/l46Cy1rHbQ92uuLXa/giphy.gif"></p>
-
-
-A BI Report/Dashboard is not exactly a sequential set of descriptive charts like those you have may built in challenge 1 during the analysis. Instead, a BI Report/Dashboard should be __a single interactive interface built around a specific objetive and which components are logically arranged in order to provide data relevant insights effectively__. Therefore, bear in mind the main objective of the competition: _understand the relationship between diamonds attributes (features) or group of attributes, and its price_.
-
-
-
----
+### 3 - PRICE INFORMATION (main KPIs): DASHBOARD
+Objetivo: estudiar las ventas, ingresos y precios (precio como KPI principal) de un solo vistazo del conjunto de diamantes en base a cut, color, clarity y carat
+![Image](https://github.com/alvaro-saez/ih_datamadpt1121_project_m2/blob/main/images/KPIs.png)
 
 
 
