@@ -28,9 +28,12 @@ import seaborn as sns
 
 ## Visualización: 
 
+[LINK a Tableau Public](https://public.tableau.com/app/profile/alvaro4889/viz/p2_diamonds_alvaro/PRICESEARCHERTOOL)
+
 El proyecto consiste en 3 pestañas (dos “dashboards” y una “story”)
 
 ### 1 - PRICE SEARCHER TOOL: DASHBOARD
+
 Objetivo: tienes un diamante y no sabes que precio ponerle. Usando los filtros seleccionas las características de tus diamantes y te devuelve el precio de mercado de un diamante similar. 
 Si hay múltiples diamantes te puedes fijar en las medias.
 Si quieres un rango te puedes fijar en las medias también.
